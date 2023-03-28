@@ -1,0 +1,9 @@
+<div class="search-continaer">
+  <input class="search-input" #inputRef type="text">
+  <button (click)="search()"class="search-button">Search</button>
+</div>
+<div *ngIf="results.length"class="results-container">
+  <ul class="search-results-list">
+    <li class="search-results" *ngFor="let result of results"><a href="result.url">{{result.title}}</a></li>
+  </ul>
+</div>

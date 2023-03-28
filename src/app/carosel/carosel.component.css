@@ -1,0 +1,33 @@
+.carosel {
+    width: 70vw;
+    height: 23vh;
+    overflow: hidden;
+    position: relative;
+}
+.slide-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.shift-buttons {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.shift-left {
+  left: 0;
+}
+
+.shift-right {
+  right: 0;
+}

@@ -1,0 +1,11 @@
+<p>
+  temp-converted works!
+</p>
+<div class="form-group">
+  <label for="celsius">Celsius</label>
+  <input type="number" id="celsius" name="celsius" [(ngModel)]="celsius" (ngModelChange)="convertTemperature('celsius')" class="form-control" />
+</div>
+<div class="form-group">
+  <label for="fahrenheit">Fahrenheit</label>
+  <input type="number" id="fahrenheit" name="fahrenheit" [(ngModel)]="fahrenheit" (ngModelChange)="convertTemperature('fahrenheit')" class="form-control" />
+</div>

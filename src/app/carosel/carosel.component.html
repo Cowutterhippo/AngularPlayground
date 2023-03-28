@@ -1,0 +1,8 @@
+<div class="carosel">
+  <button class="shift-buttons shift-left" (click)="shiftLeft()">left</button>
+  <button class="shift-buttons shift-right" (click)="shiftRight()">right</button>
+  <div class="slide-content">
+    <ng-content class="slide-image"></ng-content>
+    <!-- <div class="slide-image">{{ Items[activeIndex].name}}</div> -->
+  </div>
+</div>

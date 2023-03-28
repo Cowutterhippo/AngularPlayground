@@ -1,0 +1,18 @@
+<div class="flash-card" (click)="flipCard()">
+  <div *ngIf="side === 'front'" class="card-front">
+    <div class="card-text">
+      <h2>question:</h2>
+      <p class="question">
+        {{ flashCard.question }}
+      </p>
+    </div>
+  </div>
+  <div *ngIf="side === 'back'" class="card-back">
+    <div class="card-text">
+      <h2>Answer:</h2>
+      <p class="answer">
+        {{ flashCard.answer }}
+      </p>
+    </div>
+  </div>
+</div>
