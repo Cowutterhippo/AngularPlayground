@@ -1,0 +1,40 @@
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div *ngFor="let field of formConfig">
+    <label [attr.for]="field.name">{{field.label}}</label>
+    <input [formControlName]="field.name" [attr.id]="field.name" [attr.type]="field.type" />
+  </div>
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form> -->
+
+
+<div [formGroup]="myForm">
+
+  <div *ngFor="let field of formConfig">
+
+    <label [attr.for]="field.key">{{field.label}}</label>
+
+    <div [ngSwitch]="field.controlType">
+
+      <input *ngSwitchCase="'textbox'" [formControlName]="field.key"
+              [id]="field.key" [type]="field.type">
+
+      <select [id]="field.key" *ngSwitchCase="'dropdown'" [formControlName]="field.key">
+        <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</option>
+      </select>
+
+      <input *ngSwitchCase="'checkbox'" [formControlName]="field.key"
+              [id]="field.key" [type]="field.type">
+
+      <input *ngSwitchCase="'radio'" [formControlName]="field.key">
+
+      <textarea *ngSwitchCase="'textarea'" [formControlName]="field.key"
+              [id]="field.key">
+      </textarea>
+
+    </div>
+
+    <div class="errorMessage" *ngIf="">{{field.label}} is required</div>
+
+  </div>
+
+</div>
