@@ -18,6 +18,3 @@ export * from './lib/modal/modal.component';
 
 export * from './lib/tile/tile.module';
 export * from './lib/tile/tile.component';
-
-
-

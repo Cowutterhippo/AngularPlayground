@@ -5,10 +5,10 @@ This Article Helped me out.
 https://www.willtaylor.blog/complete-guide-to-angular-libraries/
 
 local:
-ng build --project=example-component-library
-cd dist/example-component-library
+ng build --project=playground-common-ui
+cd dist/playground-common-ui
 npm link
-ng build --project=example-component-library
+ng build --project=playground-common-ui
 ng serve
 
 In Production
@@ -19,13 +19,13 @@ First, you will need to create an npm account. Now login from the command line:
 npm login
 From the project root folder:
 
-cd dist/example-component-library
+cd dist/playground-common-ui
 npm publish
 Our package is now published on npm (publicly), and we can install it by adding it to our application’s package.json dependencies and running npm install:
 
 "dependencies": {
     ...
-    "example-component-library": "~0.0.1"
+    "playground-common-ui": "~0.0.1"
 }
 Library dependencies
 

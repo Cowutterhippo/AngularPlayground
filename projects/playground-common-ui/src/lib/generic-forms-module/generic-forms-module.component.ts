@@ -2,7 +2,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-generic-forms-component',
+  selector: 'generic-forms-component',
   templateUrl: './generic-forms-module.component.html',
   styleUrls: ['./generic-forms-module.component.css']
 })
