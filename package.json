@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-lib": "ng build --project='playground-common-ui' && cd dist/playground-common-ui && npm link",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -25,7 +26,7 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0",
-    "common-ui-lib": "file:./dist/common-ui"
+    "playground-common-ui": "file:./dist/playground-common-ui"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.1",

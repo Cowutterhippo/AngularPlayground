@@ -1,12 +1,12 @@
 import { CreateCardComponent } from './create-card/create-card.component';
-import { NgModule } from '@angular/core';
+import { Inject, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlashCardsComponent } from './flash-cards.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FlashCardComponent } from './flash-card/flash-card.component';
-import { CaroselModule } from 'common-ui-lib';
+import { CaroselModule } from 'playground-common-ui';
 import { SearchModule } from '../search/search.module';
-import { GenericFormsModuleModule } from 'common-ui-lib';
+import { GenericFormsModuleModule } from 'playground-common-ui';
 
 const routes: Routes = [
   {
@@ -27,6 +27,6 @@ const routes: Routes = [
     CaroselModule,
     SearchModule,
     GenericFormsModuleModule
-  ]
+  ],
 })
 export class FlashCardsModule { }
