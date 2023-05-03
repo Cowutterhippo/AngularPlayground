@@ -59,6 +59,7 @@ export class FlashCardsComponent {
 
   toggleCreateCardForm(): void {
     this.showCreateForm = !this.showCreateForm;
+    console.log(this.showCreateForm);
   }
 
 }
