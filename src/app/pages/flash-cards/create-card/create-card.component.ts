@@ -1,4 +1,4 @@
-import { IFieldConfig } from 'common-ui-lib';
+import { IFieldConfig } from 'playground-common-ui';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

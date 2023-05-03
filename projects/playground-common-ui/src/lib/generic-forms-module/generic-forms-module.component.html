@@ -1,40 +1,36 @@
-<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <div *ngFor="let field of formConfig">
-    <label [attr.for]="field.name">{{field.label}}</label>
-    <input [formControlName]="field.name" [attr.id]="field.name" [attr.type]="field.type" />
-  </div>
-  <button type="submit" [disabled]="myForm.invalid">Submit</button>
-</form> -->
 
-
-<div [formGroup]="myForm">
+<form class="generic-form" (ngSubmit)="onSubmit()" [formGroup]="myForm">
 
   <div *ngFor="let field of formConfig">
 
-    <label [attr.for]="field.key">{{field.label}}</label>
+    <label class="generic-form_label" [attr.for]="field.name">{{field.label}}</label>
 
     <div [ngSwitch]="field.controlType">
 
-      <input *ngSwitchCase="'textbox'" [formControlName]="field.key"
-              [id]="field.key" [type]="field.type">
+      <input class="generic-form_textbox" *ngSwitchCase="'textbox'" [formControlName]="field.name"
+              [id]="field.name" [type]="field.type">
 
-      <select [id]="field.key" *ngSwitchCase="'dropdown'" [formControlName]="field.key">
-        <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</option>
+      <select class="generic-form_select" [id]="field.name" *ngSwitchCase="'dropdown'" [formControlName]="field.name">
+        <option *ngFor="let opt of field.options" [value]="opt.name">{{opt.value}}</option>
       </select>
 
-      <input *ngSwitchCase="'checkbox'" [formControlName]="field.key"
-              [id]="field.key" [type]="field.type">
+      <input class="generic-form_checkbox" *ngSwitchCase="'checkbox'" [formControlName]="field.name"
+              [id]="field.name" [type]="field.type">
 
-      <input *ngSwitchCase="'radio'" [formControlName]="field.key">
+      <input class="generic-form_radio" *ngSwitchCase="'radio'" [formControlName]="field.name">
 
-      <textarea *ngSwitchCase="'textarea'" [formControlName]="field.key"
-              [id]="field.key">
+      <textarea class="generic-form_textarea" *ngSwitchCase="'textarea'" [formControlName]="field.name"
+              [id]="field.name">
       </textarea>
 
     </div>
 
-    <div class="errorMessage" *ngIf="">{{field.label}} is required</div>
+    <div class="error" *ngIf="">{{field.label}} is required</div>
 
   </div>
 
-</div>
+  <div class="form-row">
+    <button type="submit" [disabled]="!myForm.valid">Save</button>
+  </div>
+
+</form>

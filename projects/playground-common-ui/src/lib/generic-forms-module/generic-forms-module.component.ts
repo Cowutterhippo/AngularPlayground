@@ -1,10 +1,10 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'generic-forms-component',
   templateUrl: './generic-forms-module.component.html',
-  styleUrls: ['./generic-forms-module.component.css']
+  styleUrls: ['./generic-forms-module.component.css'],
 })
 export class GenericFormsModuleComponent implements OnInit {
   @Output() formSubmitEvent = new EventEmitter<any>();
@@ -18,6 +18,7 @@ export class GenericFormsModuleComponent implements OnInit {
     this.formConfig.forEach((field: IFieldConfig) => {
       group[field.name] = field.required ? [null, Validators.required] : [null];
     });
+    console.log(group);
     this.myForm = this.fb.group(group);
   }
 
