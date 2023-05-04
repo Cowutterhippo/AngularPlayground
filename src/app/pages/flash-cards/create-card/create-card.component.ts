@@ -1,3 +1,4 @@
+import { FlashCardService } from './../services/flash-card.service';
 import { IFieldConfig } from 'playground-common-ui';
 import { Component, OnInit } from '@angular/core';
 
@@ -28,9 +29,16 @@ export class CreateCardComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private flashCardService: FlashCardService) { }
 
   ngOnInit() {
   }
 
+  //this should no happen in the child component.
+  // we will move this with use of ngrx instead of event bubbling to be fancy.
+  postForm($event: any) {
+    this.flashCardService.addFlashCard($event).subscribe((res)=> {
+      console.log(res);
+    })
+  }
 }
