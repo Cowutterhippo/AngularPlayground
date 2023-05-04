@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'temp-conversion', loadChildren: ()=> import('./temp-converted/temp-converted.module').then(m=>m.TempConvertedModule) },
-  { path: 'flash-cards', loadChildren: ()=> import('./flash-cards/flash-cards.module').then(m=>m.FlashCardsModule) },
+  { path: 'temp-conversion', loadChildren: ()=> import('./pages/temp-converted/temp-converted.module').then(m=>m.TempConvertedModule) },
+  { path: 'flash-cards', loadChildren: ()=> import('./pages/flash-cards/flash-cards.module').then(m=>m.FlashCardsModule) },
 ];
 
 @NgModule({

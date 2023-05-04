@@ -1,0 +1,36 @@
+
+<form class="generic-form" (ngSubmit)="onSubmit()" [formGroup]="myForm">
+
+  <div *ngFor="let field of formConfig">
+
+    <label class="generic-form_label" [attr.for]="field.name">{{field.label}}</label>
+
+    <div [ngSwitch]="field.controlType">
+
+      <input class="generic-form_textbox" *ngSwitchCase="'textbox'" [formControlName]="field.name"
+              [id]="field.name" [type]="field.type">
+
+      <select class="generic-form_select" [id]="field.name" *ngSwitchCase="'dropdown'" [formControlName]="field.name">
+        <option *ngFor="let opt of field.options" [value]="opt.name">{{opt.value}}</option>
+      </select>
+
+      <input class="generic-form_checkbox" *ngSwitchCase="'checkbox'" [formControlName]="field.name"
+              [id]="field.name" [type]="field.type">
+
+      <input class="generic-form_radio" *ngSwitchCase="'radio'" [formControlName]="field.name">
+
+      <textarea class="generic-form_textarea" *ngSwitchCase="'textarea'" [formControlName]="field.name"
+              [id]="field.name">
+      </textarea>
+
+    </div>
+
+    <div class="error" *ngIf="">{{field.label}} is required</div>
+
+  </div>
+
+  <div class="form-row">
+    <button type="submit" [disabled]="!myForm.valid">Save</button>
+  </div>
+
+</form>

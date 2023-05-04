@@ -1,0 +1,48 @@
+<p>flash-cards works!</p>
+<nav class="display-options">
+  <ul>
+    <li (click)="changeView('grid')">grid</li>
+    <li (click)="changeView('list')">list</li>
+    <li (click)="changeView('carosel')">carosel</li>
+    <li (click)="toggleSearch()">Search</li>
+  </ul>
+</nav>
+<div *ngIf="searchIsOpen" class="nav-search">
+  <app-search></app-search>
+</div>
+<!-- container page layout -->
+<div class="container" (scroll)="onScroll()">
+  <!-- row -->
+  <div class="col">
+    <!-- col -->
+    <div class="row">
+      <div class="col">
+        <h1>Collection Name {{ collectionName }}</h1>
+      </div>
+    </div>
+    <!-- end col -->
+    <div>
+      <button (click)="toggleCreateCardForm()"><span *ngIf="!showCreateForm; else other">Create Card</span><ng-template #other><span #other>Hide Card Create</span></ng-template></button>
+    </div>
+    <div *ngIf="showCreateForm" class="row">
+      <div class="col">
+        <app-create-card (formSubmitEvent)="createNewFlashCard($event)"></app-create-card>
+      </div>
+    </div>
+    <div *ngIf="(view !== 'carosel')" [ngClass]='view'>
+      <ng-container *ngFor="let card of cards">
+        <app-flash-card [flashCard]="card"></app-flash-card>
+      </ng-container>
+    </div>
+
+    <div *ngIf="(view === 'carosel')" class="carosel">
+        <app-carosel [listLength]="cards.length"(activeIndexChange)="updateIndex($event)">
+          <app-flash-card [flashCard]="cards[activeIndex]"></app-flash-card>
+        </app-carosel>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- end container -->
