@@ -26,7 +26,7 @@
     </div>
     <div *ngIf="showCreateForm" class="row">
       <div class="col">
-        <app-create-card></app-create-card>
+        <app-create-card (formSubmitEvent)="createNewFlashCard($event)"></app-create-card>
       </div>
     </div>
     <div *ngIf="(view !== 'carosel')" [ngClass]='view'>

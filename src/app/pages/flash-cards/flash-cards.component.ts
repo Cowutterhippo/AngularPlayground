@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FlashCardService } from './services/flash-card.service';
 
 @Component({
   selector: 'app-flash-cards',
@@ -21,7 +22,8 @@ export class FlashCardsComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private flashCardService: FlashCardService
   ) { }
 
   ngOnInit(): void {
@@ -29,11 +31,6 @@ export class FlashCardsComponent implements OnInit {
       this.cards = data['cards'];
     })
   }
-
-  // public cards = [{ "question": "What is the capital of France?", "answer": "Paris" }, { "question": "What is the largest planet in our solar system?", "answer": "Jupiter" }, { "question": "Who wrote the novel 'To Kill a Mockingbird'?", "answer": "Harper Lee" }, { "question": "What is the tallest mountain in the world?", "answer": "Mount Everest" }, { "question": "What is the chemical symbol for gold?", "answer": "Au" },
-  // { "question": "What is the capital of France?", "answer": "Paris" }, { "question": "What is the largest planet in our solar system?", "answer": "Jupiter" }, { "question": "Who wrote the novel 'To Kill a Mockingbird'?", "answer": "Harper Lee" }, { "question": "What is the tallest mountain in the world?", "answer": "Mount Everest" }, { "question": "What is the chemical symbol for gold?", "answer": "Au" }
-  // ]
-
 
   changeView(viewType: string): void {
     console.log('changeView()');
@@ -73,4 +70,9 @@ export class FlashCardsComponent implements OnInit {
     console.log(this.showCreateForm);
   }
 
+  createNewFlashCard($event: any) {
+      this.flashCardService.addFlashCard($event).subscribe((res)=> {
+        this.cards.push(res)
+      })
+  }
 }

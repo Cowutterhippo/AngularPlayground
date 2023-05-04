@@ -1,6 +1,6 @@
 import { FlashCardService } from './../services/flash-card.service';
 import { IFieldConfig } from 'playground-common-ui';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-create-card',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-card.component.css']
 })
 export class CreateCardComponent implements OnInit {
+
+  @Output() formSubmitEvent = new EventEmitter<any>();
 
   public config: IFieldConfig[] = [
     {
@@ -29,7 +31,7 @@ export class CreateCardComponent implements OnInit {
     }
   ];
 
-  constructor(private flashCardService: FlashCardService) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -37,8 +39,6 @@ export class CreateCardComponent implements OnInit {
   //this should no happen in the child component.
   // we will move this with use of ngrx instead of event bubbling to be fancy.
   postForm($event: any) {
-    this.flashCardService.addFlashCard($event).subscribe((res)=> {
-      console.log(res);
-    })
+    this.formSubmitEvent.emit($event);
   }
 }
