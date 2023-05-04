@@ -22,7 +22,7 @@
     </div>
     <!-- end col -->
     <div>
-      <button (click)="toggleCreateCardForm()">Add Card</button>
+      <button (click)="toggleCreateCardForm()"><span *ngIf="!showCreateForm; else other">Create Card</span><ng-template #other><span #other>Hide Card Create</span></ng-template></button>
     </div>
     <div *ngIf="showCreateForm" class="row">
       <div class="col">

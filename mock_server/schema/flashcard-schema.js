@@ -15,5 +15,4 @@ const FlashCard = mongoose.model('FlashCard', flashCardSchema);
 
 module.exports = {
   FlashCard,
-  flashCardSchema
 }
