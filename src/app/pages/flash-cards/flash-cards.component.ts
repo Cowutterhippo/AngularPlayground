@@ -1,12 +1,12 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FlashCardService } from './services/flash-card.service';
 
 @Component({
   selector: 'app-flash-cards',
   templateUrl: './flash-cards.component.html',
-  styleUrls: ['./flash-cards.component.css']
+  styleUrls: ['./flash-cards.component.scss'],
 })
 export class FlashCardsComponent implements OnInit {
   public searchIsOpen: boolean = false;

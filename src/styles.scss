@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'styles/helpers/constants' as constants;
+
+html, body {
+  height: 100%;
+ }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//this works but I can't just use  constants in lower level files which is annoying.
+.blue {
+  background-color: constants.$generic-blue;
+}
+
+// this doesn't work. tried map-get with it and it didn't work either.
+$constants : constants;
