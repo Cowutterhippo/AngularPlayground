@@ -1,5 +1,4 @@
-<p>flash-cards works!</p>
-<nav class="display-options">
+<nav *ngIf="pageOptionsOpen" class="display-options">
   <ul>
     <li (click)="changeView('grid')">grid</li>
     <li (click)="changeView('list')">list</li>
