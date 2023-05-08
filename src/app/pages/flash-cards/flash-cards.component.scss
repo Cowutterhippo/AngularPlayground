@@ -8,8 +8,7 @@
     justify-content: center; */
     height: 90vh;
     width: 100vw;
-    // background-color: #f5f5f5;
-    background-color: map-get($constants, $generic-blue);
+    background-color: #f5f5f5;
     padding: 20px;
     overflow-y: scroll;
 }
