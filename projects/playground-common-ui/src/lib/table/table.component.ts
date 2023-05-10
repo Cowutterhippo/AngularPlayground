@@ -10,8 +10,23 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 export class TableComponent {
   @Input()
   columns: Array<ITableColumn> = [];
+
+  _rows: Array<ITableRow | any> = [];
+  @Input('rows')
+  set rows(value: Array<ITableRow| any>) {
+    this._rows = value;
+    this.updatePage(value.length);
+  }
+  numberofpages: Array<number>;
+  currentpage: number = 1;
+
   @Input()
-  rows: Array<ITableRow | any> = [];
+  tableLength = 10;
+
+  updatePage(rowlength: number) {
+    const pageLength = rowlength/this.tableLength;
+    this.numberofpages = Array(pageLength).fill(1);
+  }
 }
 
 export interface ITableColumn {
