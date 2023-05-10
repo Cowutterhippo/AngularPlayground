@@ -17,6 +17,30 @@
       </tr>
     </ng-container>
   </tbody>
+  <tfoot>
+    <tr>
+      <!-- pagination control -->
+      <div class="flex-container-row">
+        <div class="flex-item left-pagination">
+          <span class="material-icons">
+            arrow_back_ios
+            </span>
+        </div>
+        <div class="flex-item pagination-numbers">
+          <div  class="flex-container-row">
+              <div class="pagination-count" *ngFor="let i of numberofpages; let index">
+                {{ index }}
+              </div>
+          </div>
+        </div>
+        <div class="flex-item right-pagination">
+          <span class="material-icons">
+            arrow_forward_ios
+            </span>
+        </div>
+      </div>
+    </tr>
+  </tfoot>
 </table>
 <!-- Define the template for the table cells -->
 <ng-template #cellTemplate let-value>
