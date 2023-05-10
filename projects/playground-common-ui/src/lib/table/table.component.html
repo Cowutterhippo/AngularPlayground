@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">
+        {{column.header}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let row of rows">
+      <tr>
+        <ng-container *ngFor="let column of columns">
+          <td>
+            <ng-container *ngTemplateOutlet="cellTemplate; context: {$implicit: row[column.header]} "></ng-container>
+          </td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+<!-- Define the template for the table cells -->
+<ng-template #cellTemplate let-value>
+  {{value}}
+</ng-template>
