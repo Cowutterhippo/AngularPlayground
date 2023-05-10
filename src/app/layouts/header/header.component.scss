@@ -1,3 +1,5 @@
+@import 'src/styles/helpers/breakpoints';
+
 .main-document-header-container {
   position: sticky;
   top: 0;
@@ -19,7 +21,7 @@ $gutter: 5px;
 @mixin flex($align-items, $flow) {
   display: flex;
   flex-flow: $flow;
-  align-items: $align-items,
+  align-items: $align-items;
 }
 
 .top-navigation {
@@ -27,6 +29,7 @@ $gutter: 5px;
  border-bottom:1px solid grey;
  position: relative;
  width: 100%;
+ height: 3vh;
  z-index: 100;
   .container {
     @include container;
@@ -37,15 +40,78 @@ $gutter: 5px;
       align-items: center;
       display: flex;
       flex: 1 1;
-      height: 30px;
+      // height: 30px;
       justify-content: space-between;
+      @include media-breakpoint('gt-xs') {
+        .top-navigation-wrap_menu-button {
+          display: none;
+        }
+      }
     }
 
     .top-navigation-main {
       display: none;
+      @include media-breakpoint('gt-xs') {
+        @include flex('start', 'row nowrap');
+
+        gap: 0.5rem;
+        justify-content: space-between;
+        padding: 0;
+        width: 100%;
+        z-index: inherit;
+        position: static;
+        padding: 0px;
+        flex: 1 1;
+        .main-nav {
+          order: 0;
+          width: max-content;
+        }
+        .top-navigation-main_nav-search {
+          order: 1;
+        }
+        .top-navigation-main_nav-auth {
+          order: 2;
+        }
+      }
       justify-content: space-between;
-      padding: 0;
       width: 100%;
+
+      .main-nav {
+        margin-right: auto;
+        .main-menu {
+          @include flex('start', 'row nowrap');
+          list-style: none;
+          gap: 0.85rem;
+
+          .top-level-entry-container {
+            position: relative;
+            a.home-link {
+              width: 100%;
+              height: 100%;
+              padding: .85rem;
+            }
+          }
+
+          .top-level-entry-container_button {
+            border: none;
+            background-color: white;
+
+          }
+        }
+      }
+
+      .top-navigation-main_nav-search {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .top-nativation-main_search-form {
+          background-color: #f5f5f5;
+          width: 40%;
+          height: 44%;
+          border-radius: 25px;
+          border: 1px grey solid;
+        }
+      }
     }
   }
 }

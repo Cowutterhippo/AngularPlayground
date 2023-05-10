@@ -1,15 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-@use 'styles/helpers/constants' as constants;
+@use 'src/styles/helpers/mixins' as mixins;
 
 html, body {
   height: 100%;
  }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-//this works but I can't just use  constants in lower level files which is annoying.
-.blue {
-  background-color: constants.$generic-blue;
+.visually-hidden {
+  @include mixins.visually-hidden;
 }
 
-// this doesn't work. tried map-get with it and it didn't work either.
-$constants : constants;
+ul.cui-dropdown-menu {
+  list-style: none;
+  background-color: #ffff;
+  border: 1px solid #cccc;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0;
+  margin-left: 50px;
+  position: absolute;
+  min-width: 200px;
+  z-index: var(--z-index-top);
+  li {
+    padding: 18px 24px;
+    cursor: pointer;
+  }
+}
