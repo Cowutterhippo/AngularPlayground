@@ -7,11 +7,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { VerticalLayoutComponent } from './vertical/vertical.component';
 import { ContentModule } from './content/content.module';
 import { HeaderComponent } from './header/header.component';
+import { CommonDirectives } from '../shared/directives/common-directives.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ContentModule
+    ContentModule,
+    CommonDirectives
   ],
   declarations: [ VerticalLayoutComponent,NavBarComponent, FooterComponent, SidebarComponent, HeaderComponent],
   exports: [VerticalLayoutComponent]

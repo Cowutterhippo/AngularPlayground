@@ -1,16 +1,49 @@
 <div class="main-document-header-container">
   <header class="top-navigation">
     <div class="container">
+      <!-- navigation-wrap is for smaller screens -->
       <div class="top-navigation-wrap">
-        <div>picture and cool name here</div>
-        <button class="open">
+        <div class="top-natvation-logo-site-name">
+          <svg width="50" height="50">
+            <circle cx="25" cy="25" r="20" stroke="orange" stroke-width="4" fill="yellow" />
+          </svg>
+        </div>
+
+        <button class="top-navigation-wrap_menu-button">
           <span class="material-icons">
-          density_medium
+            density_medium
           </span>
         </button>
       </div>
-      <div class="top-navigation-main">
 
+      <div class="top-navigation-main">
+        <nav class="main-nav" aria-label="Main menu">
+          <ul class="main-menu">
+            <li class="top-level-entry-container" ><a class="home-link" [appHoverHighlight]="'grey'" [ogColor]="'#ffff'">Home</a></li>
+            <li class="top-level-entry-container" (mouseenter)="toggleProjects()">
+              Projects
+            </li>
+            <ul class="top-navigation-main_projects-list cui-dropdown-menu" (mouseleave)="toggleProjects()" [ngClass]="{'visually-hidden' : !projectsIsOpen }">
+              <!-- temp -->
+              <li class="dropdown-menu_li" [appHoverHighlight]="'grey'" [ogColor]="'#ffff'"><a src="/flash-cards">Flash Cards</a></li>
+              <li class="dropdown-menu_li" [appHoverHighlight]="'grey'" [ogColor]="'#ffff'">Chat Bot</li>
+              <li class="dropdown-menu_li" [appHoverHighlight]="'grey'" [ogColor]="'#ffff'">Kan Ban</li>
+              <li class="dropdown-menu_li" [appHoverHighlight]="'grey'" [ogColor]="'#ffff'">Blog</li>
+              <!-- <li *ngFor="let project of projects">
+                <a [routerLink]="[project.path]" routerLinkActive="router-link-active">{{ project.name }}</a>
+              </li> -->
+            </ul>
+          </ul>
+        </nav>
+        <div class="top-navigation-main_nav-search">
+          <label for="top-nav-search-main_search-form-label" class="visually-hidden">search</label>
+          <form id="top-nav-search-form" class="top-nativation-main_search-form"></form>
+        </div>
+        <div class="top-navigation-main_nav-auth">
+          <button class="top-navigation-main_auth-button">
+              Auth Stuff
+          </button>
+        </div>
       </div>
     </div>
   </header>
