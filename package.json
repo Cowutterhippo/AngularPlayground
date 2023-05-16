@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-lib": "ng build --project='playground-common-ui' && cd dist/playground-common-ui && npm link",
+    "build-lib": "ng build --project='playground-common-ui' && cd dist/playground-common-ui && npm pack && cd ../.. && npm install dist/playground-common-ui/playground-common-ui-0.0.3.tgz",
+    "publish-lib": "ng build --project='playground-common-ui' && cd dist/playground-common-ui && npm publish && cd ../.. && npm install playground-common-ui",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -25,7 +26,7 @@
     "bootstrap-icons": "^1.10.3",
     "mongoose-geojson-schema": "^2.2.4",
     "node-sass": "^8.0.0",
-    "playground-common-ui": "file:./dist/playground-common-ui",
+    "playground-common-ui": "^0.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

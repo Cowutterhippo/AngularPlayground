@@ -3,7 +3,10 @@ const bodyParser = require('body-parser');
 const usersRouter = require('./routes/user-routes');
 const flashCardRoutes = require('./routes/flashcard-routes');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/playground', {
+
+const localDBString = 'mongodb://127.0.0.1:27017';
+// const hostedDBString = `mongodb+srv://${dbInfo.username}:${dbInfo.password}@`;
+mongoose.connect(localDBString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
