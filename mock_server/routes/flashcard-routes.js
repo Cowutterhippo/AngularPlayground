@@ -3,9 +3,14 @@ const router = express.Router();
 const fsSchema = require('../schema/flashcard-schema');
 
 router.get('/api/flashcards', async(req, res) => {
-  const cards = await fsSchema.FlashCard.find();
-  console.log(cards);
-  res.send(cards).status(200);
+  try {
+    const cards = await fsSchema.FlashCard.find();
+    console.log(cards);
+    res.send(cards).status(200);
+  } catch {
+    console.log('Error getting flashcards');
+    res.send('Error getting flashcards').status(500);
+  }
 });
 
 router.get('/api/flashcards/:id', async (req, res) => {
