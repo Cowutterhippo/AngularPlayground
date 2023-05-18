@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const { User, userSchema} = require('../schema/user-schema');
+const { TRUE } = require('node-sass');
 
 router.post(
   'api/users/register',
@@ -93,20 +94,28 @@ router.post('/api/users/login', async (req, res) => {
 
 // Get many Users
 // will authenticate this a litte later to hide specific information.
-router.post('/api/users', async (req, res) => {
-  console.log('hit get all users route');
-  const lim = req.body.limit;
-  User.find().limit(lim).then((users)=> {
-    console.log(users);
-  })
-});
+// router.post('/api/users', async (req, res) => {
+//   console.log('hit get all users route');
+//   const lim = req.body.limit;
+//   User.find().limit(lim).then((users)=> {
+//     console.log(users);
+//   })
+// });
 
 //Get one User
 // will authenticate this a litte later to hide specific information.
-router.get('/api/users/:email', async (req, res) => {
-  const email = req.params.email;
-  let user = await userSchema.User.findOne({ email });
+router.post('/api/checkusers', async (req, res) => {
+  console.log(req.body.payload);
+  const email = req.body.payload;
+  let user = await User.findOne({ email });
   console.log(user);
+
+  if (user == null) {
+    return res.status(200).json({ exists: false });
+  } else {
+    // if is auth else will vary what this sends depending on if the user is authenticated or not.
+    res.status(200).json({exists : true});
+  }
 });
 
 module.exports = router;

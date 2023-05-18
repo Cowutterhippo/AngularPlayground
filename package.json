@@ -8,7 +8,10 @@
     "build-lib": "ng build --project='playground-common-ui' && cd dist/playground-common-ui && npm pack && cd ../.. && npm install dist/playground-common-ui/playground-common-ui-0.0.3.tgz",
     "publish-lib": "ng build --project='playground-common-ui' && cd dist/playground-common-ui && npm publish && cd ../.. && npm install playground-common-ui",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ci-test": "ng test --no-watch --no-progress",
+    "functional-test": "ng e2e",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +46,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "ng-packagr": "^15.2.2",
+    "protractor": "^7.0.0",
     "typescript": "~4.9.4"
   }
 }

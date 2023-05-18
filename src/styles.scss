@@ -3,7 +3,8 @@
 
 html, body {
   height: 100%;
- }
+}
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .visually-hidden {
@@ -25,4 +26,14 @@ ul.cui-dropdown-menu {
     padding: 18px 24px;
     cursor: pointer;
   }
+}
+
+.form-error {
+  color: red;
+  font-size: 0.75rem;
+}
+
+.form-success {
+  color: green;
+  font-size: 0.75rem;
 }
