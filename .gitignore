@@ -10,7 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
-/mock_server/node_modules/
+/mock_server/node_modules
 
 # IDEs and editors
 .idea/
