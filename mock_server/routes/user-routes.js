@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const { User, userSchema} = require('../schema/user-schema');
-const { TRUE } = require('node-sass');
 
 router.post(
   'api/users/register',
@@ -25,7 +24,7 @@ router.post(
 
     try {
       // Check if user already exists
-      let user = await userSchema.User.findOne({ email });
+      let user = await User.findOne({ email });
       console.log(user);
 
       if (user) {
@@ -39,7 +38,7 @@ router.post(
       user.password = await bcrypt.hash(password, salt);
 
       // Save user to database
-      await user.save();
+      let newUser = await user.save();
 
       // Create and sign JWT
       const payload = { user: { id: user.id } };
@@ -52,6 +51,7 @@ router.post(
           res.json({ token });
         }
       );
+      res.status(200).json({ msg: 'User created', user: newUser });
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server Error');
@@ -61,10 +61,13 @@ router.post(
 
 router.post('/api/users/login', async (req, res) => {
   const { email, password } = req.body;
-
+  console.log(email, password)
+  let allusers = User.find({ email });
+  console.log('all',allusers);
   try {
     // Check if user exists
     const user = await User.findOne({ email });
+    console.log(user);
     if (!user) {
       return res.status(400).json({ msg: 'Invalid credentials' });
     }

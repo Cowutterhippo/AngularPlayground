@@ -1,3 +1,34 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Register</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+<form [formGroup]="loginForm">
+  <div class="form-field">
+    <label for="email">email</label>
+    <input type="text" id="email" formControlName="email" />
+  </div>
+  <div class="form-field">
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" />
+  </div>
+  <div class="form-buttons">
+    <button
+      class="button"
+      (click)="login()"
+    >
+      <span>Login</span>
+    </button>
+    <button class="button" (click)="register()">
+      <span>Register</span>
+    </button>
+    <button class="button" (click)="recoverPassword()">
+      <span>Forgot Password?</span>
+    </button>
+  </div>
+</form>
+</div>
+</div>

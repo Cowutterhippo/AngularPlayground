@@ -1,6 +1,6 @@
 const dbInfo = require('./passwords');
 const bodyParser = require('body-parser');
-const usersRouter = require('./routes/user-routes');
+const usersRoutes = require('./routes/user-routes');
 const flashCardRoutes = require('./routes/flashcard-routes');
 const mongoose = require('mongoose');
 
@@ -27,9 +27,9 @@ app.use(
     }
     ),
   bodyParser.json(),
-  usersRouter,
-  flashCardRoutes
 );
+app.use(usersRoutes);
+app.use(flashCardRoutes);
 
 app.listen(3000, () => {
   console.log('Mock server is running on port 3000');
