@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  public open = false;
 
+  openSidebar() {
+    this.open = !this.open;
+  }
 }

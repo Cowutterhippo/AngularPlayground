@@ -5,17 +5,24 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { VerticalLayoutComponent } from './vertical/vertical.component';
-import { ContentModule } from './content/content.module';
 import { HeaderComponent } from './header/header.component';
 import { CommonDirectives } from '../shared/directives/common-directives.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
-    ContentModule,
-    CommonDirectives
+    CommonDirectives,
+    RouterModule
   ],
-  declarations: [ VerticalLayoutComponent,NavBarComponent, FooterComponent, SidebarComponent, HeaderComponent],
+  declarations: [ 
+    VerticalLayoutComponent,
+    NavBarComponent, 
+    FooterComponent, 
+    SidebarComponent, 
+    HeaderComponent,
+    ContentComponent
+  ],
   exports: [VerticalLayoutComponent]
 })
 export class LayoutsModule { }

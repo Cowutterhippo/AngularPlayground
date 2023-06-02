@@ -1,1 +1,10 @@
-<p>sidebar works!</p>
+<div class="sp-open-tab">
+    <button (click)="openSidebar()">SidePanel</button>
+</div>
+<div *ngIf="open" class="sidebar-container">
+    <div class="sidebar-nav">
+        <button (click)="openSidebar()">close sp</button>
+    </div>
+    <a [routerLink]="[{outlets : {sidebar: ['nav', 'andrew'] }}]">show links</a>
+    <router-outlet name="sidebar"></router-outlet>
+</div>

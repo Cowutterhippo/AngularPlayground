@@ -1,0 +1,32 @@
+:host {
+    height: 1px;
+    width: 0%;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+
+.sp-open-tab {
+    position: relative;
+    top: 70px;
+}
+
+.sidebar-container {
+    position: fixed;
+    top: 51px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    max-width: 280px;
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start;
+    a { 
+        // margin-bottom: auto;
+    }
+    .sidebar-nav {
+        // margin-bottom: auto;
+    }
+}

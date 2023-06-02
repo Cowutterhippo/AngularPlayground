@@ -9,17 +9,19 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { httpInterceptorProviders } from './shared/interceptors';
 import { AuthService } from './shared/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavLinksComponent } from './sp-experience/nav-links/nav-links.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
+    NavLinksComponent,
    ],
   imports: [
+    LayoutsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LayoutsModule,
     HttpClientModule
   ],
   providers: [
