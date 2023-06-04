@@ -6,5 +6,9 @@
         <button (click)="openSidebar()">close sp</button>
     </div>
     <a [routerLink]="[{outlets : {sidebar: ['nav', 'andrew'] }}]">show links</a>
+    <!-- sp search  could probably have a router search -->
+    <input #searchInput>
+    <button (click)="spSearch()">search</button>
+
     <router-outlet name="sidebar"></router-outlet>
 </div>
