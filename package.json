@@ -23,7 +23,7 @@
     "@angular/common": "^16.1.4",
     "@angular/compiler": "^16.1.4",
     "@angular/core": "^16.1.4",
-    "@angular/flex-layout": "^15.0.0-beta.42",
+    "@angular/flex-layout": "^16.1.0-beta.1",
     "@angular/forms": "^16.1.4",
     "@angular/material": "^16.1.4",
     "@angular/platform-browser": "^16.1.4",
@@ -33,7 +33,7 @@
     "bootstrap-icons": "^1.10.3",
     "mongoose-geojson-schema": "^2.2.4",
     "node-sass": "^8.0.0",
-    "playground-common-ui": "^0.0.4",
+    "playground-common-ui": "^0.0.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.1"
