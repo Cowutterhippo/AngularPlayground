@@ -32,7 +32,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CaroselModule,
     SearchModule,
-    GenericFormsModuleModule
+    GenericFormsModuleModule,
   ],
   providers: [
     FlashCardService,

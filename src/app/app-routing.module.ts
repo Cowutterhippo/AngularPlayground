@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: ()=> import('./pages/login/login.module').then(m=>m.LoginModule)},
   { path: 'temp-conversion', loadChildren: ()=> import('./pages/temp-converted/temp-converted.module').then(m=>m.TempConvertedModule)},
   { path: 'flash-cards', loadChildren: ()=> import('./pages/flash-cards/flash-cards.module').then(m=>m.FlashCardsModule)},
+  { path: 'dashboard-builder', loadChildren: ()=> import('./pages/dashboard-builder/dashboard-builder.module').then(m=>m.DashboardBuilderModule)},
   { path: 'nav/:name', component: NavLinksComponent, outlet: 'sidebar'},
 ];
 

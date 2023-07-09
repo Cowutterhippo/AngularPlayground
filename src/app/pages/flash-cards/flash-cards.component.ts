@@ -20,7 +20,7 @@ export class FlashCardsComponent implements OnInit {
 
   public batchSize: number = 5;
 
-  public pageOptionsOpen = false;
+  public pageOptionsOpen = true;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,

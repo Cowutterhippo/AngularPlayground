@@ -1,4 +1,4 @@
-<div class="flash-card" (click)="flipCard()">
+<div class="flash-card" [@flipCard]="side" (click)="flipCard()">
   <div *ngIf="side === 'front'" class="card-front">
     <div class="card-text">
       <h2>question:</h2>

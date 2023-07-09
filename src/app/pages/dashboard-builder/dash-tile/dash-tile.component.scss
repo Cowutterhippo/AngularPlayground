@@ -1,0 +1,48 @@
+:host {
+
+    .dash-tile-container {
+        border: 1px solid #000;
+        height: 100%;
+        margin: 2px;
+        width: 100%;
+        border-radius: 5%;
+        background-color: #fff;
+    }
+    /** This is for the drop down of the icon */
+    .dash-tile-head_actions-menu {
+        width: 100%;
+        height: 20ch;
+        animation: slideDown 500ms ease-in-out;
+    }
+
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-25%);
+        }
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    .dash-tile-title {
+        font-size: 1em;
+    }
+    .fxCol {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+    }
+    .fxRow {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        
+    } 
+    
+    .fxRow > * {
+        margin: auto;
+    }
+}

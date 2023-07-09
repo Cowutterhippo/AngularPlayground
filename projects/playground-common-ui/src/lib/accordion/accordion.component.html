@@ -1,0 +1,25 @@
+<div class="accordion-container" [@toggleAccordion]="open">
+    <div class="accordion-container-item">
+        <div class="row">
+            <div class="col-10">
+                <h3 class="accordion-container-item_title">
+                    {{item.title}}
+                </h3>
+            </div>
+            <div class="col-2">
+                <button class="accordion-container-item_btn" (click)="toggleAccordion()">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </button>
+                <button class="accordion-container-item_btn"  (click)="toggleAccordion()">
+                    <i class="material-icons">close</i>  
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-container_header">
+        <ng-content select="[accordion-header]"></ng-content>
+    </div>
+    <div class="accordion-container_body">
+        <ng-content select="[accordion-body]"></ng-content>
+    </div>
+</div>

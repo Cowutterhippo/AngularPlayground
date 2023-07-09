@@ -1,0 +1,42 @@
+<div class="dash-tile-container fxCol">
+    <div class="dash-tile-head fxRow">
+        <h3 class="dash-tile-title">
+            {{item.title}}
+        </h3>
+        <div class="dash-tile-head_actions">
+            <button (click)="toggleDropDown($event)" class="dash-tile-head_actions-btn">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <button class="dash-tile-head_actions-btn">
+                <i class="material-icons">close</i>
+            </button>
+        </div>
+    </div>
+    <div class="dash-tile-head-menu">
+        <div *ngIf="open" class="dash-tile-head_actions-menu">
+            <ul>
+                <li>hi</li>
+                <li>bye</li>
+                <li> nada</li>
+            </ul>
+        </div>
+    </div>
+    <div class="dash-tile-body">
+        <div class="dash-tile-content">
+            <p> lorem ipsim</p>
+            <ng-content></ng-content>
+        </div>
+    </div>
+    <div class="dash-tile-foot">
+        <div class="dash-tile-foot_actions fxRow">
+            <button class="dash-tile-foot_actions-btn">
+                <i class="material-icons">add</i>
+            </button>
+            <ng-container *ngFor="let action of item.actions">
+\                <button class="dash-tile-foot_actions-btn" (click)="action.action()">
+                    <i class="material-icons">{{action.icon}}</i>
+                </button>
+            </ng-container>
+        </div>
+    </div>
+</div>
