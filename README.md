@@ -3,6 +3,12 @@ The goal of this site is to be my testing ground for concepts and to showcase so
 My Goal here is to setup a Enterprise quality angular architechture that I can fork for all of my future front end projects. 
 
 ## Todo
+Add NGRX State for learning purposes. 
+    Add Root State
+    build Todo table feature state use entities.  
+    Add Virtual Scroll/ infinite scroll. 
+    utilize bem.
+
 Move protractor tests to Cypress
 Build PWA & Ionic counterpart
 Build Module Federation.
