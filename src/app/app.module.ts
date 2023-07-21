@@ -10,7 +10,11 @@ import { httpInterceptorProviders } from './shared/interceptors';
 import { AuthService } from './shared/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavLinksComponent } from './sp-experience/nav-links/nav-links.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtools } from '@ngrx/store-devtools';
 
+import { environment } from '../environments/environments';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +22,19 @@ import { NavLinksComponent } from './sp-experience/nav-links/nav-links.component
     NavLinksComponent,
    ],
   imports: [
-    LayoutsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutsModule,
+    // StoreModule.forRoot({
+    //   // todosFeature: todosFeatureReducer,
+    // }),
+    // EffectsModule.forRoot([TodosFeatureEffects]),
+    // StoreDevtools.instrument(
+    //   maxAge: 25,
+    //   logOnly: environment.production,
+    // ),
   ],
   providers: [
     httpInterceptorProviders

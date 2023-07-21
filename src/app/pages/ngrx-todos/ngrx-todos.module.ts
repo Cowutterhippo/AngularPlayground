@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgrxTodosComponent } from './ngrx-todos/ngrx-todos.component';
+import { NgrxTodosDataService } from './services/ngrx-todos-data.service';
+import { NgrxTodosStorageService } from './services/ngrx-todos-storage.service';
+import { NgrxTodosComponent } from './container/ngrx-todos.component';
 
 
 @NgModule({
@@ -10,6 +12,6 @@ import { NgrxTodosComponent } from './ngrx-todos/ngrx-todos.component';
   imports: [
     CommonModule,
   ],
-  providers: [ ]
+  providers: [ NgrxTodosDataService, NgrxTodosStorageService ]
 })
 export class NgrxTodosModule { }
